@@ -1,6 +1,6 @@
 import {useState,  useEffect} from "react";
 
-function Formulario(){
+function Formulario( {clientes, setClientes}){
 
     const [nombreCliente, setNombreCliente] = useState('');
     const [precioVestido, setPrecioVestido] = useState('');
@@ -17,7 +17,18 @@ function Formulario(){
         if([nombreCliente, precioVestido,correo,fechaAlquiler,fechaDevuelto,descVestido].includes('')){
             setError(true)
         }else{
+            //Validacion completa
             setError(false)
+            //Objeto de cliente
+            const objetoCliente = {
+                nombreCliente,
+                precioVestido,
+                correo,
+                fechaAlquiler,
+                fechaDevuelto,
+                descVestido
+            }
+            setClientes([...clientes,objetoCliente])
         }
     }
 
