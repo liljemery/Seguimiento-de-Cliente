@@ -3,6 +3,23 @@ import {useState,  useEffect} from "react";
 function Formulario(){
 
     const [nombreCliente, setNombreCliente] = useState('');
+    const [precioVestido, setPrecioVestido] = useState('');
+    const [correo, setCorreo] = useState('');
+    const [fechaAlquiler, setFechaAlquiler] = useState('');
+    const [fechaDevuelto, setFechaDevuelto] = useState('');
+    const [descVestido, setDescVestido] = useState('');
+
+    const [error, setError] = useState(false);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        if([nombreCliente, precioVestido,correo,fechaAlquiler,fechaDevuelto,descVestido].includes('')){
+            setError(true)
+        }else{
+            setError(false)
+        }
+    }
 
     return(
         <div className="md:w-1/2 lg:w-2/5">
@@ -11,7 +28,15 @@ function Formulario(){
                 Agrega clientes y
                 <span className="font-bold text-indigo-600"> Administralos</span>
             </p>
-            <form className="bg-white shadow-md rounded-lg py-10 px-5">
+            <form 
+                onSubmit={handleSubmit}
+                className="bg-white shadow-md rounded-lg py-10 px-5"
+            >
+                {error && <div className="bg-indigo-600 rounded-md mb-1">
+                        <p className="text-center text-white text-sm uppercase p-3 font-bold">
+                            Todos los campos son obligatorios
+                        </p>
+                    </div>}
                 <div className="mb-5">
                     <label htmlFor="nombreCliente" className="block text-gray-700 font-bold">
                         Nombre Cliente</label>
@@ -20,6 +45,8 @@ function Formulario(){
                         placeholder="Nombre del cliente"
                         className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
                         id="nombreCliente"
+                        value={nombreCliente}
+                        onChange={ (e) => setNombreCliente(e.target.value)}
                     />
                 </div>
                 <div className="mb-5">
@@ -30,6 +57,8 @@ function Formulario(){
                         placeholder="Precio del vestido"
                         className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
                         id="precioOrden"
+                        value={precioVestido}
+                        onChange={ (e) => setPrecioVestido(e.target.value)}
                     />
                 </div>
                 <div className="mb-5">
@@ -40,6 +69,8 @@ function Formulario(){
                         placeholder="Correo electronico del cliente"
                         className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
                         id="correoCliente"
+                        value={correo}
+                        onChange={ (e) => setCorreo(e.target.value)}
                     />
                 </div>
                 <div className="mb-5">
@@ -50,6 +81,8 @@ function Formulario(){
                         placeholder="Fecha de alquiler del vestido"
                         className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
                         id="fechaAlquilado"
+                        value={fechaAlquiler}
+                        onChange={ (e) => setFechaAlquiler(e.target.value)}
                     />
                 </div>
                 <div className="mb-5">
@@ -60,6 +93,8 @@ function Formulario(){
                         placeholder="Fecha de alquiler del vestido"
                         className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
                         id="fechaADevolver"
+                        value={fechaDevuelto}
+                        onChange={ (e) => setFechaDevuelto(e.target.value)}
                     />
                 </div>
                 <div className="mb-5">
@@ -69,6 +104,8 @@ function Formulario(){
                         placeholder="Descripcion del vestido"
                         className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
                         id="descripcionOrden"
+                        value={descVestido}
+                        onChange={ (e) => setDescVestido(e.target.value)}
                     />
                 </div>
                 <input
