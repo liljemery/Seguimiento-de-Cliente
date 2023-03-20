@@ -5,7 +5,7 @@ function Formulario( {cliente, setClientes}){
 
     const [nombreCliente, setNombreCliente] = useState('');
     const [precioVestido, setPrecioVestido] = useState('');
-    const [correo, setCorreo] = useState('');
+    const [telefono, settelefono] = useState('');
     const [fechaAlquiler, setFechaAlquiler] = useState('');
     const [fechaDevuelto, setFechaDevuelto] = useState('');
     const [descVestido, setDescVestido] = useState('');
@@ -15,7 +15,7 @@ function Formulario( {cliente, setClientes}){
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if([nombreCliente, precioVestido,correo,fechaAlquiler,fechaDevuelto,descVestido].includes('')){
+        if([nombreCliente, precioVestido,telefono,fechaAlquiler,fechaDevuelto,descVestido].includes('')){
             setError(true)
         }else{
             //Validacion completa
@@ -24,7 +24,7 @@ function Formulario( {cliente, setClientes}){
             const objetoCliente = {
                 nombreCliente,
                 precioVestido,
-                correo,
+                telefono,
                 fechaAlquiler,
                 fechaDevuelto,
                 descVestido
@@ -32,7 +32,7 @@ function Formulario( {cliente, setClientes}){
             setClientes([...cliente,objetoCliente])
             setNombreCliente('')
             setPrecioVestido('')
-            setCorreo('')
+            settelefono('')
             setFechaAlquiler('')
             setFechaDevuelto('')
             setDescVestido('')
@@ -76,15 +76,15 @@ function Formulario( {cliente, setClientes}){
                     />
                 </div>
                 <div className="mb-5">
-                    <label htmlFor="correoCliente" className="block text-gray-700 font-bold">
-                    Correo electronico del cliente</label>
+                    <label htmlFor="telefonoCliente" className="block text-gray-700 font-bold">
+                    Numero telefonico del cliente</label>
                     <input
-                        type="email"
-                        placeholder="Correo electronico del cliente"
+                        type="tel"
+                        placeholder="809-809-8009"
                         className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
-                        id="correoCliente"
-                        value={correo}
-                        onChange={ (e) => setCorreo(e.target.value)}
+                        id="telefonoCliente"
+                        value={telefono}
+                        onChange={ (e) => settelefono(e.target.value)}
                     />
                 </div>
                 <div className="mb-5">
@@ -115,7 +115,7 @@ function Formulario( {cliente, setClientes}){
                     <label htmlFor="descripcionOrden" className="block text-gray-700 font-bold">
                     Descripcion de la orden</label>
                     <textarea
-                        placeholder="Descripcion del vestido"
+                        placeholder="Fecha de actividad / Fecha "
                         className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
                         id="descripcionOrden"
                         value={descVestido}
