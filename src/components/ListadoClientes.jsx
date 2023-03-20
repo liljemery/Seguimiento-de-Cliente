@@ -1,6 +1,6 @@
 import Cliente from "./Cliente";
 
-function ListadoClientes(){
+function ListadoClientes({cliente}){
     return(
         <div className="md:w-1/2 lg:w-3/5 md:h-screen overflow-scroll">
             <h2 className="font-black text-3xl text-center">Listado Clientes</h2>
@@ -8,8 +8,11 @@ function ListadoClientes(){
                 Administra tus 
                 <span className="text-indigo-600 font-bold"> clientes y citas</span>
             </p>
-
-            <Cliente/>
+            { cliente.map( cliente =>(
+                <Cliente
+                    cliente={cliente}
+                />
+            ))}
         </div>
     )
 }

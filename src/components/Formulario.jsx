@@ -1,6 +1,7 @@
 import {useState,  useEffect} from "react";
+import Error from "./Error";
 
-function Formulario( {clientes, setClientes}){
+function Formulario( {cliente, setClientes}){
 
     const [nombreCliente, setNombreCliente] = useState('');
     const [precioVestido, setPrecioVestido] = useState('');
@@ -28,7 +29,13 @@ function Formulario( {clientes, setClientes}){
                 fechaDevuelto,
                 descVestido
             }
-            setClientes([...clientes,objetoCliente])
+            setClientes([...cliente,objetoCliente])
+            setNombreCliente('')
+            setPrecioVestido('')
+            setCorreo('')
+            setFechaAlquiler('')
+            setFechaDevuelto('')
+            setDescVestido('')
         }
     }
 
@@ -43,11 +50,7 @@ function Formulario( {clientes, setClientes}){
                 onSubmit={handleSubmit}
                 className="bg-white shadow-md rounded-lg py-10 px-5"
             >
-                {error && <div className="bg-indigo-600 rounded-md mb-1">
-                        <p className="text-center text-white text-sm uppercase p-3 font-bold">
-                            Todos los campos son obligatorios
-                        </p>
-                    </div>}
+                {error && <Error />}
                 <div className="mb-5">
                     <label htmlFor="nombreCliente" className="block text-gray-700 font-bold">
                         Nombre Cliente</label>
@@ -64,7 +67,7 @@ function Formulario( {clientes, setClientes}){
                     <label htmlFor="precioOrden" className="block text-gray-700 font-bold">
                     Precio de la orden</label>
                     <input
-                        type="text"
+                        type="number"
                         placeholder="Precio del vestido"
                         className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
                         id="precioOrden"

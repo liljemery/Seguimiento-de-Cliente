@@ -1,35 +1,45 @@
-function Cliente(){
+function Cliente({cliente}){
+
+    const { nombreCliente } = cliente
+    const { precioVestido } = cliente
+    const { correo} = cliente
+    const { fechaAlquiler } = cliente
+    const { fechaDevuelto } = cliente
+    const { descVestido } = cliente
+
+    console.log(nombreCliente,precioVestido,correo,fechaAlquiler,fechaDevuelto,descVestido)
+
   return (
     <div className="m-3 bg-white shadow-md px-5 py-10 rounded-xl">
         <p className="font-bold mb-3 text-gray-700 uppercase">Nombre Cliente: <br/>
             <span className="font-normal normal-case">
-                Sandra
+               {nombreCliente}
             </span>
         </p>
         <p className="font-bold mb-3 text-gray-700 uppercase">Precio de la orden: <br/>
             <span className="font-normal normal-case">
-                $ 99,99
+                {precioVestido}
             </span>
         </p>
         <p className="font-bold mb-3 text-gray-700 uppercase">Correo Electronico del cliente: <br/>
             <span className="font-normal normal-case">
-                sandra@2ssilhoette.com
+                {correo}
             </span>
         </p>
         <p className="font-bold mb-3 text-gray-700 uppercase">Fecha Alquilado: <br/>
             <span className="font-normal normal-case">
-                hoy
+                {fechaAlquiler}
             </span>
         </p>
         <p className="font-bold mb-3 text-gray-700 uppercase">Fecha a devolver: <br/>
             <span className="font-normal normal-case">
-                en 2 dias
+                {fechaDevuelto}
             </span>
         </p>
         <p className="font-bold mb-3 text-gray-700 uppercase">Descripcion de la orden: <br/>
             <span className="font-normal normal-case">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia, nihil.
-           </span>
+                {descVestido}    
+            </span>
         </p>
     </div>
   )

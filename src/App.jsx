@@ -5,17 +5,19 @@ import { useState } from "react"
 
 function App() {
 
-  const [clientes, setClientes] = useState([]);
+  const [cliente, setClientes] = useState([]);
 
   return (
     <div className="container mx-auto mt-10">
       <Header/>
         <div className="mt-5 md:flex">
           <Formulario
-            clientes={clientes}
+            cliente={cliente}
             setClientes={setClientes}
           />
-          <ListadoClientes />
+          <ListadoClientes 
+            cliente={cliente}
+          />
         </div>
     </div>
   )
