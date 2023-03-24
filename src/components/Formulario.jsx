@@ -12,6 +12,13 @@ function Formulario( {cliente, setClientes}){
 
     const [error, setError] = useState(false);
 
+    const generarID = () => {
+        const random = Math.random().toString(36).slice(0,2)
+        const fecha = Date.now().toString(36)
+
+        return random + fecha
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -30,7 +37,6 @@ function Formulario( {cliente, setClientes}){
                 descVestido,
                 id: generarID()
             }
-            
             setClientes([...cliente,objetoCliente])
             setNombreCliente('')
             setPrecioVestido('')
