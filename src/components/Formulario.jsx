@@ -27,8 +27,10 @@ function Formulario( {cliente, setClientes}){
                 telefono,
                 fechaAlquiler,
                 fechaDevuelto,
-                descVestido
+                descVestido,
+                id: generarID()
             }
+            
             setClientes([...cliente,objetoCliente])
             setNombreCliente('')
             setPrecioVestido('')

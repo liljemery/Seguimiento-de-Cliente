@@ -9,9 +9,9 @@ function ListadoClientes({cliente}){
                 Administra tus 
                 <span className="text-indigo-600 font-bold"> clientes y citas</span>
             </p>
-            { cliente.map( (cliente, index) =>(
+            { cliente.map( cliente =>(
                 <Cliente
-                    key={index}
+                    key={cliente.id}
                     cliente={cliente}
                 />
             ))}
