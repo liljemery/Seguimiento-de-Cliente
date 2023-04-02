@@ -1,4 +1,4 @@
-function Cliente({clientes}){
+function Cliente({clientes, setCliente}){
 
     const { nombreCliente } = clientes
     const { precioVestido } = clientes
@@ -42,6 +42,7 @@ function Cliente({clientes}){
         <div className="flex justify-between mt-10">
             <button type="button" 
             className="py-2 px-10 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-lg"
+            onClick={() =>setCliente(clientes)}
             >
                 Editar
             </button>
