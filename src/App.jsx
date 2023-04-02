@@ -6,7 +6,7 @@ import { useState } from "react"
 function App() {
 
   const [clientes, setClientes] = useState([]);
-  const [Cliente, setCliente] = useState([]);
+  const [cliente, setCliente] = useState([]);
 
   return (
     <div className="container mx-auto mt-10">
@@ -15,6 +15,7 @@ function App() {
           <Formulario
             clientes={clientes}
             setClientes={setClientes}
+            cliente={cliente}
           />
           <ListadoClientes 
             clientes={clientes}

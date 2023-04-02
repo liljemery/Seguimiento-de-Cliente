@@ -1,7 +1,7 @@
 import {useState,  useEffect} from "react";
 import Error from "./Error";
 
-function Formulario( {clientes, setClientes}){
+function Formulario( {clientes, setClientes, cliente}){
 
     const [nombreCliente, setNombreCliente] = useState('');
     const [precioVestido, setPrecioVestido] = useState('');
@@ -11,6 +11,19 @@ function Formulario( {clientes, setClientes}){
     const [descVestido, setDescVestido] = useState('');
 
     const [error, setError] = useState(false);
+
+    useEffect(()=>{
+        if(Object.keys(cliente).length > 0){
+            setNombreCliente(cliente.nombreCliente)
+            setPrecioVestido(cliente.precioVestido)
+            settelefono(cliente.telefono)
+            setFechaAlquiler(cliente.fechaAlquiler)
+            setFechaDevuelto(cliente.fechaDevuelto)
+            setDescVestido(cliente.descVestido)
+        }else{
+            console.log('nada')
+        }
+    },[cliente])
 
     const generarID = () => {
         const random = Math.random().toString(36).slice(0,2)
@@ -133,7 +146,7 @@ function Formulario( {clientes, setClientes}){
                 <input
                     type="submit"
                     className="bg-indigo-600 w-full p-3 text-white uppercase font-bold hover:bg-indigo-700 cursor-pointer transition-all rounded-md"
-                    value="Agregar cliente"
+                    value={ cliente.id ? "Editar Paciente": "Agregar Paciente"}
                 />
             </form>
         </div>
