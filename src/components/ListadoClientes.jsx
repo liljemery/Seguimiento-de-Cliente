@@ -1,6 +1,6 @@
 import Cliente from "./Cliente";
 
-function ListadoClientes({cliente}){
+function ListadoClientes({clientes}){
 
     return(
         <div className="md:w-1/2 lg:w-3/5 md:h-screen overflow-scroll">
@@ -9,10 +9,10 @@ function ListadoClientes({cliente}){
                 Administra tus 
                 <span className="text-indigo-600 font-bold"> clientes y citas</span>
             </p>
-            { cliente.map( cliente =>(
+            { clientes.map( clientes =>(
                 <Cliente
-                    key={cliente.id}
-                    cliente={cliente}
+                    key={clientes.id}
+                    clientes={clientes}
                 />
             ))}
         </div>

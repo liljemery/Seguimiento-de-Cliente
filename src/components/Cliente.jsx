@@ -1,11 +1,11 @@
-function Cliente({cliente}){
+function Cliente({clientes}){
 
-    const { nombreCliente } = cliente
-    const { precioVestido } = cliente
-    const { telefono } = cliente
-    const { fechaAlquiler } = cliente
-    const { fechaDevuelto } = cliente
-    const { descVestido } = cliente
+    const { nombreCliente } = clientes
+    const { precioVestido } = clientes
+    const { telefono } = clientes
+    const { fechaAlquiler } = clientes
+    const { fechaDevuelto } = clientes
+    const { descVestido } = clientes
     
   return (
     <div className="m-3 bg-white shadow-md px-5 py-10 rounded-xl">

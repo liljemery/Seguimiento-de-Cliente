@@ -1,7 +1,7 @@
 import {useState,  useEffect} from "react";
 import Error from "./Error";
 
-function Formulario( {cliente, setClientes}){
+function Formulario( {clientes, setClientes}){
 
     const [nombreCliente, setNombreCliente] = useState('');
     const [precioVestido, setPrecioVestido] = useState('');
@@ -37,7 +37,7 @@ function Formulario( {cliente, setClientes}){
                 descVestido,
                 id: generarID()
             }
-            setClientes([...cliente,objetoCliente])
+            setClientes([...clientes,objetoCliente])
             setNombreCliente('')
             setPrecioVestido('')
             settelefono('')
