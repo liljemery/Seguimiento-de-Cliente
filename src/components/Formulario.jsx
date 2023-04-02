@@ -21,7 +21,6 @@ function Formulario( {clientes, setClientes, cliente}){
             setFechaDevuelto(cliente.fechaDevuelto)
             setDescVestido(cliente.descVestido)
         }else{
-            console.log('nada')
         }
     },[cliente])
 
@@ -47,10 +46,19 @@ function Formulario( {clientes, setClientes, cliente}){
                 telefono,
                 fechaAlquiler,
                 fechaDevuelto,
-                descVestido,
-                id: generarID()
+                descVestido
             }
-            setClientes([...clientes,objetoCliente])
+
+            if(cliente.id){
+                objetoCliente.id = cliente.id
+
+                const clienteActualizado = clientes.map(clienteState => clienteState === cliente.id ? clienteState: objetoCliente)
+                setClientes(clienteActualizado)
+            }else{
+                objetoCliente.id = generarID()
+                setClientes([...clientes,objetoCliente])
+            }
+
             setNombreCliente('')
             setPrecioVestido('')
             settelefono('')

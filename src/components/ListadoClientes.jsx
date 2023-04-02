@@ -1,6 +1,6 @@
 import Cliente from "./Cliente";
 
-function ListadoClientes({clientes, setCliente}){
+function ListadoClientes({clientes, setCliente, eliminarCliente}){
 
     return(
         <div className="md:w-1/2 lg:w-3/5 md:h-screen overflow-scroll">
@@ -14,6 +14,7 @@ function ListadoClientes({clientes, setCliente}){
                     key={clientes.id}
                     clientes={clientes}
                     setCliente={setCliente}
+                    eliminarCliente={eliminarCliente}
                 />
             ))}
         </div>

@@ -1,11 +1,6 @@
-function Cliente({clientes, setCliente}){
+function Cliente({clientes, setCliente, eliminarCliente}){
 
-    const { nombreCliente } = clientes
-    const { precioVestido } = clientes
-    const { telefono } = clientes
-    const { fechaAlquiler } = clientes
-    const { fechaDevuelto } = clientes
-    const { descVestido } = clientes
+    const { nombreCliente, precioVestido, telefono, fechaAlquiler, fechaDevuelto, descVestido, id } = clientes
     
   return (
     <div className="m-3 bg-white shadow-md px-5 py-10 rounded-xl">
@@ -47,9 +42,10 @@ function Cliente({clientes, setCliente}){
                 Editar
             </button>
             <button type="button"
-            className="py-2 px-10 bg-red-600 hover:bg-red-700 text-white font-bold rounded-lg"
+            className="py-2 px-10 bg-green-600 hover:bg-green-700 text-white font-bold rounded-lg"
+            onClick={() => eliminarCliente(id)}
             >
-                Eliminar
+                Completo
             </button>
         </div>
     </div>
