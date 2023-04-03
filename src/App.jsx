@@ -12,7 +12,6 @@ function App() {
       const obtenerLS = () => {
         const clientesLS = JSON.parse(localStorage.getItem('clientes')) ?? [];
         setClientes(clientesLS)
-        console.log(clientesLS)
       }
   
     obtenerLS();
