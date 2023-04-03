@@ -47,7 +47,7 @@ function Formulario( {clientes, setClientes, cliente}){
                 fechaAlquiler,
                 fechaDevuelto,
                 descVestido
-            }
+            };
 
             if(cliente.id){
                 objetoCliente.id = cliente.id
@@ -57,7 +57,7 @@ function Formulario( {clientes, setClientes, cliente}){
             }else{
                 objetoCliente.id = generarID()
                 setClientes([...clientes,objetoCliente])
-            }
+            };
 
             setNombreCliente('')
             setPrecioVestido('')
@@ -65,8 +65,8 @@ function Formulario( {clientes, setClientes, cliente}){
             setFechaAlquiler('')
             setFechaDevuelto('')
             setDescVestido('')
-        }
-    }
+        };
+    };
 
     return(
         <div className="md:w-1/2 lg:w-2/5">
@@ -158,6 +158,6 @@ function Formulario( {clientes, setClientes, cliente}){
                 />
             </form>
         </div>
-    )
+    );
 }
 export default Formulario;
