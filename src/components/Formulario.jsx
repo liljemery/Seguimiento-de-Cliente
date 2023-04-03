@@ -51,9 +51,9 @@ function Formulario( {clientes, setClientes, cliente}){
 
             if(cliente.id){
                 objetoCliente.id = cliente.id
-
-                const clienteActualizado = clientes.map(clienteState => clienteState === cliente.id ? clienteState: objetoCliente)
+                const clienteActualizado = clientes.map( clienteState => clienteState.id === cliente.id ? objetoCliente : clienteState )
                 setClientes(clienteActualizado)
+                location.reload();
             }else{
                 objetoCliente.id = generarID()
                 setClientes([...clientes,objetoCliente])
