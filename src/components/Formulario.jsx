@@ -144,7 +144,7 @@ function Formulario( {clientes, setClientes, cliente}){
                     <label htmlFor="descripcionOrden" className="block text-gray-700 font-bold">
                     Descripcion de la orden</label>
                     <textarea
-                        placeholder="Fecha de actividad / Fecha "
+                        placeholder="Descripcion de los vestidos"
                         className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
                         id="descripcionOrden"
                         value={descVestido}
