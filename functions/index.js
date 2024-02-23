@@ -16,7 +16,7 @@ const logger = require("firebase-functions/logger");
 exports.helloWorld = onRequest((request, response) => {
   // To query :
   // func...?nombre=arg&?body=arg
-  const { nombre , body } = request.query;
+  const {nombre, body} = request.query;
   logger.info("Hello logs!", {structuredData: true});
   response.send(`<h1>Hola ${nombre} </h1> <br/> <p>${body}</p>`);
 });
