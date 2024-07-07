@@ -5,6 +5,9 @@
 
 ##### This is an ERP planned for a Dress Store, where all the information can be saved ( to local storage in this case ) edited or deleted in the same UI. This project was made using react, HOCs and Tailwind, so can be used as a guide for this frameworks-patterns implementation.
 
+###### Live project link:
+https://majestic-centaur-f30aaf.netlify.app/
+
 Features
 - User authentication and authorization
 - CRUD operations for managing data
