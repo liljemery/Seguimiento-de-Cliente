@@ -9,11 +9,8 @@
 https://majestic-centaur-f30aaf.netlify.app/
 
 Features
-- User authentication and authorization
 - CRUD operations for managing data
 - Responsive and modern user interface
-- Integration with external APIs
-- Secure and scalable architecture
 
 
 # Getting Started
